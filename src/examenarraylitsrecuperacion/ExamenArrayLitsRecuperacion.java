@@ -16,7 +16,7 @@ public class ExamenArrayLitsRecuperacion {
         ArrayList<String> nomb = new ArrayList<String>();
         ArrayList<Float> tiempo = new ArrayList<Float>();
         ArrayList<Float> velocidad = new ArrayList<Float>();
-        int mejor=0,op = 1;
+        int mejor=0,peor=0,op = 1,cont=0,i;
         float vac=0;
         
         while (op != 0){
@@ -31,6 +31,19 @@ public class ExamenArrayLitsRecuperacion {
             }
         }
         vac = vac / tiempo.size();
+        for(i=0; i<velocidad.size(); i++){
+            if(velocidad.get(i)>velocidad.get(mejor)){
+                mejor = i;
+            }
+            if(velocidad.get(i)<velocidad.get(peor)){
+                peor = i;
+            }
+            if(tiempo.get(i)>vac){
+                cont=cont+1;
+            }
+            
+        }
+        
         
        
         
